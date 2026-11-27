@@ -1,0 +1,305 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fa;
+  color: #1e293b;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  height: 75px;
+  background: #172554;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  gap: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-button:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.nav-button.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Main Content */
+
+.main-content {
+  padding: 35px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+  margin-bottom: 25px;
+}
+
+.form-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #172554;
+}
+
+.section-description {
+  color: #64748b;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  color: #1e293b;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Save Button */
+
+.save-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background: #2563eb;
+  color: white;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-button:hover {
+  background: #1d4ed8;
+}
+
+/* All Details */
+
+.all-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Sidebar */
+
+.sidebar-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.sidebar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  max-width: 85%;
+  height: 100%;
+  background: white;
+  padding: 25px;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.25s ease;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.sidebar-top h2 {
+  font-size: 22px;
+  color: #172554;
+}
+
+.close-sidebar {
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #475569;
+}
+
+.sidebar-link {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  font-size: 15px;
+  color: #334155;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-link:hover {
+  background: #eff6ff;
+}
+
+.sidebar-link.selected {
+  background: #dbeafe;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 18px;
+  }
+
+  .navbar {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .nav-button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 18px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: left;
+  }
+}
